@@ -1,303 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hopit.ai - Be a Force for Good. Join us on our journey to make a positive impact." />
-  
-  <!-- Preconnect to external resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  
-  <title>Hopit.ai - Be a Force for Good</title>
-  
-  <!-- External CSS with better loading strategy -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet" />
-  
-  <style>
-    :root {
-      --primary-color: #e67e00;
-      --primary-color-hover: #ff8c00;
-      --secondary-color: #ffc107;
-      --text-color: #333;
-      --text-color-muted: #666;
-      --background-color: #fff;
-      --border-radius: 20px;
-      --transition-speed: 0.3s;
-      --spacing-unit: 1rem;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hopit.ai - Be a Force for Good. Join us on our journey to make a positive impact."
+    />
 
-    /* Reset and Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-    body {
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background: var(--background-color);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: calc(var(--spacing-unit) * 2);
-    }
+    <title>Hopit.ai - Be a Force for Good</title>
 
-    /* Card Container */
-    .card {
-      background: var(--background-color);
-      border-radius: var(--border-radius);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-      overflow: hidden;
-      transition: transform var(--transition-speed) ease;
-    }
+    <!-- External CSS with better loading strategy -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    <style>
+      :root {
+        --primary-color: #e67e00;
+        --primary-color-hover: #ff8c00;
+        --secondary-color: #ffc107;
+        --text-color: #333;
+        --text-color-muted: #666;
+        --background-color: #fff;
+        --border-radius: 20px;
+        --transition-speed: 0.3s;
+        --spacing-unit: 1rem;
+      }
 
-    /* Hero Section */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
-    }
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    .hero__image {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      max-width: 100%;
-      transition: transform var(--transition-speed) ease;
-    }
+      body {
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background: var(--background-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: calc(var(--spacing-unit) * 2);
+      }
 
-    .hero:hover .hero__image {
-      transform: scale(1.05);
-    }
+      /* Card Container */
+      .card {
+        background: var(--background-color);
+        border-radius: var(--border-radius);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        overflow: hidden;
+        transition: transform var(--transition-speed) ease;
+      }
 
-    /* Content Section */
-    .content {
-      padding: calc(var(--spacing-unit) * 1);
-      text-align: center;
-    }
+      .card:hover {
+        transform: translateY(-5px);
+      }
 
-    .title {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin-bottom: calc(var(--spacing-unit) * 0.25);
-      color: var(--primary-color);
-    }
-
-    .subtitle {
-      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
-      margin-bottom: 0;
-      color: var(--text-color);
-    }
-
-    .tagline {
-      font-size: 1rem;
-      color: var(--secondary-color);
-      margin-bottom: calc(var(--spacing-unit) * 0.5);
-    }
-
-    .description {
-      margin-bottom: calc(var(--spacing-unit) * 1);
-      color: var(--text-color-muted);
-    }
-
-    /* Form Styles */
-    .form {
-      display: flex;
-      gap: calc(var(--spacing-unit) * 0.5);
-      margin-bottom: calc(var(--spacing-unit) * 1);
-    }
-
-    .form__input {
-      flex: 1;
-      padding: 0.8rem;
-      border: 2px solid #eee;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color var(--transition-speed) ease;
-    }
-
-    .form__input:focus {
-      outline: none;
-      border-color: var(--primary-color);
-    }
-
-    .form__button {
-      padding: 0.8rem 1.5rem;
-      background: var(--primary-color);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color var(--transition-speed) ease,
-                  transform 0.2s ease;
-    }
-
-    .form__button:hover,
-    .form__button:focus {
-      background: var(--primary-color-hover);
-      transform: scale(1.05);
-    }
-
-    /* Social Icons */
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: calc(var(--spacing-unit) * 1.5);
-    }
-
-    .social__link {
-      color: var(--text-color-muted);
-      text-decoration: none;
-      transition: color var(--transition-speed) ease;
-    }
-
-    .social__link:hover,
-    .social__link:focus {
-      color: var(--primary-color);
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 400px) {
+      /* Hero Section */
       .hero {
-        height: 250px;
+        position: relative;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        overflow: hidden;
       }
 
-      .form {
-        flex-direction: column;
+      .hero__image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        max-width: 100%;
+        transition: transform var(--transition-speed) ease;
       }
 
-      .form__input,
-      .form__button {
-         width: 100%;
+      .hero:hover .hero__image {
+        transform: scale(1.05);
       }
 
+      /* Content Section */
       .content {
-        padding: var(--spacing-unit);
+        padding: calc(var(--spacing-unit) * 1);
+        text-align: center;
       }
-    }
 
-    /* Accessibility Improvements */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+      .title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: calc(var(--spacing-unit) * 0.25);
+        color: var(--primary-color);
       }
-    }
 
-    .success-message {
-      display: none;
-      color: var(--primary-color);
-      margin-top: calc(var(--spacing-unit) * 1);
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="hero">
-      <img 
-        src="kid_n_cat.png"
-        alt="A child and a cat exploring knowledge together" 
-        class="hero__image"
-      />
-    </div>
-    <div class="content">
-      <h1 class="title">Coming Soon!</h1>
-      <h2 class="subtitle">Hopit.ai</h2>
-      <p class="tagline">Be a Force for Good</p>
-      <p class="description">We're building something awesome! Stay tuned.</p>
-      
-      <form id="notifyForm" class="form" action="#" method="POST">
-        <input 
-          type="email" 
-          name="entry.1984296060" 
-          class="form__input"
-          placeholder="Enter your email" 
-          required 
-          aria-label="Email address"
+      .subtitle {
+        font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+        margin-bottom: 0;
+        color: var(--text-color);
+      }
+
+      .tagline {
+        font-size: 1rem;
+        color: var(--secondary-color);
+        margin-bottom: calc(var(--spacing-unit) * 0.5);
+      }
+
+      .description {
+        margin-bottom: calc(var(--spacing-unit) * 1);
+        color: var(--text-color-muted);
+      }
+
+      /* Form Styles */
+      .form {
+        display: flex;
+        gap: calc(var(--spacing-unit) * 0.5);
+        margin-bottom: calc(var(--spacing-unit) * 1);
+      }
+
+      .form__input {
+        flex: 1;
+        padding: 0.8rem;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color var(--transition-speed) ease;
+      }
+
+      .form__input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+
+      .form__button {
+        padding: 0.8rem 1.5rem;
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+      }
+
+      .form__button:hover,
+      .form__button:focus {
+        background: var(--primary-color-hover);
+        transform: scale(1.05);
+      }
+
+      /* Social Icons */
+      .social {
+        display: flex;
+        justify-content: center;
+        gap: calc(var(--spacing-unit) * 1.5);
+      }
+
+      .social__link {
+        color: var(--text-color-muted);
+        text-decoration: none;
+        transition: color var(--transition-speed) ease;
+      }
+
+      .social__link:hover,
+      .social__link:focus {
+        color: var(--primary-color);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 400px) {
+        .hero {
+          height: 250px;
+        }
+
+        .form {
+          flex-direction: column;
+        }
+
+        .form__input,
+        .form__button {
+          width: 100%;
+        }
+
+        .content {
+          padding: var(--spacing-unit);
+        }
+      }
+
+      /* Accessibility Improvements */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      .success-message {
+        display: none;
+        color: var(--primary-color);
+        margin-top: calc(var(--spacing-unit) * 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="hero">
+        <img
+          src="kid_n_cat.png"
+          alt="A child and a cat exploring knowledge together"
+          class="hero__image"
         />
-        <button type="submit" class="form__button">
-          Notify me
-        </button>
-      </form>
-      <div id="successMessage" class="success-message">Thank you for subscribing!</div>
-      
-      <div class="social">
-        <!-- <a href="#" class="social__link" aria-label="Follow us on Twitter">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-          </svg>
-        </a>
-        <a href="#" class="social__link" aria-label="Connect with us on LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a> -->
-        <a href="mailto:hello@hopit.ai" class="social__link" aria-label="Email us">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-        </a>
-        <a href="https://github.com/hopit-ai" class="social__link" aria-label="View our code on GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-        </a>
+      </div>
+      <div class="content">
+        <h1 class="title">Coming Soon!</h1>
+        <h2 class="subtitle">Hopit.ai</h2>
+        <p class="tagline">Be a Force for Good</p>
+        <p class="description">We're building something awesome! Stay tuned.</p>
+
+        <form id="notifyForm" class="form" action="#" method="POST">
+          <!-- This input captures the user's email. The 'name' attribute is updated to match the new form. -->
+          <input
+            type="email"
+            name="entry.1272858960"
+            class="form__input"
+            placeholder="Enter your email"
+            required
+            aria-label="Email address"
+          />
+          <!-- This hidden input sets the 'source' to 'hopit.ai' for every submission. -->
+          <input type="hidden" name="entry.1337471277" value="hopit.ai" />
+          <button type="submit" class="form__button">Notify me</button>
+        </form>
+        <div id="successMessage" class="success-message">Thank you for subscribing!</div>
+
+        <div class="social">
+          <a href="mailto:hello@hopit.ai" class="social__link" aria-label="Email us">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2zM20 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/hopit-ai"
+            class="social__link"
+            aria-label="View our code on GitHub"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-    const form = document.getElementById('notifyForm');
-    const successMessage = document.getElementById('successMessage');
+    <script>
+      const form = document.getElementById("notifyForm");
+      const successMessage = document.getElementById("successMessage");
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      // Replace this URL with your Google Form submission URL
-      const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfjkFGHWPHJiRme4XJGYW99EuJE2w4kG34L6u3t8PBIyHHPtw/formResponse';
-      
-      const formData = new FormData(form);
-      formData.forEach((value, key) => { console.log('Submitting data:', key, value); });
-      
-      try {
-        await fetch(googleFormUrl, {
-            method: 'POST',
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // The Google Form URL has been updated to your new form.
+        const googleFormUrl =
+          "https://docs.google.com/forms/d/e/1FAIpQLSdL1B-PEe6nktZXxWeOw4M6MAcmwFAbteghYHOqxe-KWlOIVw/formResponse";
+
+        const formData = new FormData(form);
+
+        try {
+          await fetch(googleFormUrl, {
+            method: "POST",
             body: formData,
-            mode: 'no-cors'
-        });
-        
-        successMessage.style.display = 'block';
-        form.reset();
-        
-        setTimeout(() => {
-           successMessage.style.display = 'none';
-        }, 3000);
-        
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    });
-  </script>
-</body>
+            mode: "no-cors", // Important for submitting to Google Forms to avoid CORS errors
+          });
+
+          // Show success message and clear the form
+          successMessage.style.display = "block";
+          form.reset();
+
+          // Hide the success message after 3 seconds
+          setTimeout(() => {
+            successMessage.style.display = "none";
+          }, 3000);
+        } catch (error) {
+          console.error("Error:", error);
+          // You could add a user-facing error message here if needed
+        }
+      });
+    </script>
+  </body>
 </html>
