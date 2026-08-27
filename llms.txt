@@ -1,0 +1,55 @@
+# Hopit AI: open benchmarks for fashion retrieval and attribute extraction
+
+> Hopit AI publishes two open benchmark suites for fashion vision. MODA measures
+> retrieval — finding the right product from a photo or a phrase. MODA_NER
+> measures attribute extraction — reading a garment into structured product data.
+> Both are measured at full corpus through one shared harness, with competitor
+> models run under identical protocol and every losing cell disclosed.
+
+Both suites ship the scorers, the prediction files and their SHA-256 hashes.
+Third-party datasets are never redistributed: you obtain each corpus under its
+own terms and the builders recreate the frozen split from record IDs and
+checksums. Any published number is meant to be recomputed rather than trusted.
+
+## The two suites
+
+- [MODA: retrieval and search](https://hopit-ai.github.io/Moda/): text-to-image
+  and image-to-image product retrieval, scored as MAP@10 at full corpus under one
+  evaluator (`pytrec_eval map_cut.10`), competitors included.
+  [Details for models](https://hopit-ai.github.io/Moda/llms.txt) ·
+  [code](https://github.com/hopit-ai/Moda)
+- [MODA_NER: attribute extraction](https://hopit-ai.github.io/Moda_ner/): four
+  frozen tracks covering localized garment crops, catalogue product images,
+  applicability-aware full-body photos and product text. Tracks are never
+  averaged into a single score.
+  [Details for models](https://hopit-ai.github.io/Moda_ner/llms.txt) ·
+  [code](https://github.com/hopit-ai/Moda_ner)
+
+## Why they are kept separate
+
+Retrieval asks which product a shopper meant. Attribute extraction asks what a
+garment actually is. A system can be strong at one and weak at the other, so the
+suites are reported separately and never combined into a single headline number.
+Within MODA_NER the same rule applies between tracks: a weak result on full-body
+photos cannot be absorbed by a strong result on clean catalogue shots.
+
+## The method both suites share
+
+- Full corpus only. No subsampled galleries, and screening runs are never mixed
+  with full-corpus rows.
+- One harness. Our models and competitors' run identical preprocessing and
+  protocol, and a published baseline is reproduced before it is compared against.
+- Predict before the labels open. Prediction files are hashed and committed
+  before scoring, so they cannot be revised once the answers are visible.
+- Score every row. Missing or unsupported predictions are reported rather than
+  dropped, and the scorers fail closed.
+- Losses shown. Every model card links the benchmarks it loses, and failed runs
+  are written up beside the ones that worked.
+
+## Links
+
+- [Benchmarks home](https://hopit-ai.github.io/)
+- [Models on Hugging Face](https://huggingface.co/HopitAI)
+- [Code on GitHub](https://github.com/hopit-ai)
+- [Company](https://hopit.ai)
+- [Research notes](https://hopitai.substack.com/)

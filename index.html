@@ -13,9 +13,13 @@
 <meta property="og:title" content="Hopit AI: open benchmarks for fashion retrieval and attribute extraction">
 <meta property="og:description" content="Two benchmark suites, one method. Full corpus, one harness, competitors included, losses shown.">
 <meta property="og:url" content="https://hopit-ai.github.io/">
+<meta property="og:image" content="https://hopit.ai/images/runway.png">
+<meta property="og:image:alt" content="Hopit AI open benchmarks for fashion retrieval and attribute extraction">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hopit AI open benchmarks">
 <meta name="twitter:description" content="MODA for retrieval, MODA_NER for attribute extraction. Losses published alongside wins.">
+<meta name="twitter:image" content="https://hopit.ai/images/runway.png">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 
 <script type="application/ld+json">
 {
@@ -39,6 +43,52 @@
       "hasPart": [
         {"@type": "WebPage", "name": "MODA retrieval benchmark", "url": "https://hopit-ai.github.io/Moda/"},
         {"@type": "WebPage", "name": "MODA_NER attribute extraction benchmark", "url": "https://hopit-ai.github.io/Moda_ner/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://hopit-ai.github.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between MODA and MODA_NER?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MODA measures retrieval: given a photo or a phrase, find the right product. MODA_NER measures attribute extraction: read a garment image into structured product data such as category, colour, fit, neckline, sleeve length, pattern and material. They answer different questions, so the two suites are reported separately and never combined into a single score."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are the benchmark tracks never averaged together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A model can be strong on clean catalogue product shots and weak on full-body photos. Averaging lets a weak track hide behind a strong one, so each track is reported on its own and promotion requires a real gain on every required track rather than a good average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the published numbers be reproduced independently?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Both suites ship the scorers, the prediction files and their SHA-256 hashes. Third-party datasets are not redistributed: you obtain each corpus under its own terms and the builders recreate the frozen split from record IDs and checksums, then the scorer recomputes the published number from the shipped predictions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are losing results published as well as wins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every model card links the benchmarks it loses, prediction files are shipped for the runs that lost as well as the ones that won, and training approaches that failed are written up alongside the one that worked."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Hopit AI models can be used commercially?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The MODA retrieval models and the MODA_NER crop model are MIT licensed and commercially usable. The MODA_NER catalog and full-body models are evaluated against research-only corpora whose terms reach derived data, so their weights are CC BY-NC 4.0. That restriction binds Hopit AI too: those weights are not part of the paid product."
+          }
+        }
       ]
     }
   ]
