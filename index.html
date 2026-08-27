@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hopit AI: open benchmarks for fashion retrieval and attribute extraction</title>
+<meta name="description" content="Hopit AI publishes two open benchmark suites for fashion: MODA for retrieval and search, MODA_NER for attribute extraction. Full corpus, one harness, competitors included, losses shown.">
+<link rel="canonical" href="https://hopit-ai.github.io/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hopit AI">
+<meta property="og:title" content="Hopit AI: open benchmarks for fashion retrieval and attribute extraction">
+<meta property="og:description" content="Two benchmark suites, one method. Full corpus, one harness, competitors included, losses shown.">
+<meta property="og:url" content="https://hopit-ai.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hopit AI open benchmarks">
+<meta name="twitter:description" content="MODA for retrieval, MODA_NER for attribute extraction. Losses published alongside wins.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://hopit-ai.github.io/#org",
+      "name": "Hopit AI",
+      "url": "https://hopit.ai",
+      "description": "Fashion-native retrieval, attribute extraction and trend intelligence, measured in public.",
+      "knowsAbout": ["fashion image retrieval","fashion attribute extraction","product search","e-commerce catalogue enrichment","benchmark reproducibility"],
+      "sameAs": ["https://github.com/hopit-ai","https://huggingface.co/HopitAI","https://hopitai.substack.com/"]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://hopit-ai.github.io/#page",
+      "name": "Hopit AI open benchmarks",
+      "url": "https://hopit-ai.github.io/",
+      "about": {"@id": "https://hopit-ai.github.io/#org"},
+      "hasPart": [
+        {"@type": "WebPage", "name": "MODA retrieval benchmark", "url": "https://hopit-ai.github.io/Moda/"},
+        {"@type": "WebPage", "name": "MODA_NER attribute extraction benchmark", "url": "https://hopit-ai.github.io/Moda_ner/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--bg:#fff;--fg:#12151a;--muted:#5b6472;--line:#e3e7ec;--accent:#3b4ee0;--code:#f5f6f8}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e7eaee;--muted:#9aa3b0;--line:#252a32;--accent:#8f9cff;--code:#161a21}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.65}
+main{max-width:960px;margin:0 auto;padding:48px 20px 96px}
+h1{font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
+h2{font-size:17px;margin:44px 0 12px;padding-top:20px;border-top:1px solid var(--line)}
+h3{font-size:14px;margin:26px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+p{margin:0 0 14px;max-width:74ch}
+a{color:var(--accent)}
+.lede{font-size:15px;color:var(--muted);max-width:74ch;margin-bottom:22px}
+.nav{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 28px;font-size:13px}
+table{border-collapse:collapse;width:100%;margin:14px 0 18px;font-size:13px;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.05em}
+code{background:var(--code);border-radius:4px;padding:1px 5px;font-size:12.5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:18px 0 6px}
+.card{border:1px solid var(--line);border-radius:8px;padding:20px}
+.card h3{margin-top:0;color:var(--fg);text-transform:none;letter-spacing:0;font-size:16px}
+.card p{font-size:13px;color:var(--muted)}
+.card .go{font-size:13px}
+ul{max-width:74ch;padding-left:20px}
+li{margin-bottom:8px}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Hopit AI</h1>
+<p class="lede">The intelligence layer fashion commerce runs on. We build fashion-native
+retrieval and attribute extraction, and we measure both in public: full corpus, one harness,
+competitors included, losses shown.</p>
+
+<div class="nav">
+  <a href="https://hopit.ai">hopit.ai</a> ·
+  <a href="https://github.com/hopit-ai">GitHub</a> ·
+  <a href="https://huggingface.co/HopitAI">Models</a> ·
+  <a href="https://hopitai.substack.com/">Research</a>
+</div>
+
+<h2>Two benchmark suites</h2>
+
+<p>They answer different questions, so they are kept apart and never combined into a single
+score. Retrieval asks which product a shopper meant. Attribute extraction asks what a garment
+actually is. A system can be strong at one and weak at the other.</p>
+
+<div class="cards">
+  <div class="card">
+    <h3>MODA: retrieval and search</h3>
+    <p>Given a photo or a phrase, find the right product. Covers image-to-product similarity,
+    text-to-product catalogue search, and street-photo to catalogue matching. Every cell is
+    MAP@10 at full corpus under one evaluator, with competitor models run through identical
+    preprocessing.</p>
+    <p class="go"><a href="https://hopit-ai.github.io/Moda/">Benchmarks</a> ·
+    <a href="https://github.com/hopit-ai/Moda">Code</a></p>
+  </div>
+  <div class="card">
+    <h3>MODA_NER: attribute extraction</h3>
+    <p>Turn a fashion image into structured product data: category, colour, fit, neckline,
+    sleeve length, pattern, material. Four frozen tracks covering garment crops, catalogue
+    images, applicability-aware full-body photos and product text. Predictions are hashed
+    before labels open.</p>
+    <p class="go"><a href="https://hopit-ai.github.io/Moda_ner/">Benchmarks</a> ·
+    <a href="https://github.com/hopit-ai/Moda_ner">Code</a></p>
+  </div>
+</div>
+
+<h2>What each one measures</h2>
+
+<table>
+<tr><th>Suite</th><th>Question</th><th>Input</th><th>Scored on</th></tr>
+<tr><td>MODA</td><td>Which product did they mean?</td><td>A photo, or a phrase</td><td>MAP@10, full corpus, one evaluator</td></tr>
+<tr><td>MODA_NER <code>crop</code></td><td>What is this garment?</td><td>A cropped garment</td><td>15 attribute fields</td></tr>
+<tr><td>MODA_NER <code>catalog</code></td><td>What colour and fit?</td><td>A catalogue product image</td><td>10 fields including colour and fit</td></tr>
+<tr><td>MODA_NER <code>fullbody</code></td><td>Is the attribute even visible?</td><td>A full-body photo</td><td>18 fields with an explicit not-applicable class</td></tr>
+<tr><td>MODA_NER <code>text</code></td><td>What do the words claim?</td><td>Product title or description</td><td>13 entity types</td></tr>
+</table>
+
+<h2>The method both suites share</h2>
+
+<ul>
+<li><b>Full corpus only.</b> No subsampled galleries, and screening runs are never mixed with
+full-corpus rows.</li>
+<li><b>One harness.</b> Our models and competitors' run identical preprocessing and protocol.
+We reproduce a published baseline before comparing against it.</li>
+<li><b>Predict before the labels open.</b> Prediction files are hashed and committed before
+scoring, so they cannot be revised once the answers are visible.</li>
+<li><b>Score every row.</b> Missing or unsupported predictions are reported rather than quietly
+dropped, and the scorers fail closed.</li>
+<li><b>Tracks are never averaged.</b> A weak result on one track cannot be absorbed by a strong
+result on another.</li>
+<li><b>Losses shown.</b> Every model card links the benchmarks it loses, and the runs that
+failed are written up alongside the ones that worked.</li>
+</ul>
+
+<h2>Reproduce any number</h2>
+
+<p>Both suites ship the scorers, the prediction files, and their hashes. We do not redistribute
+third-party datasets: you obtain each corpus under its own terms, and the builders recreate the
+frozen split from record IDs and checksums. If a number here is wrong, it is meant to be
+provable from the artefacts rather than argued about.</p>
+
+<footer>Made with ♥ in NYC and India</footer>
+
+</main>
+</body>
+</html>
