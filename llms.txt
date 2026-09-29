@@ -1,6 +1,6 @@
 # Hopit: open benchmarks for fashion retrieval and attribute extraction
 
-> Hopit is a continual-learning lab built in Asia-Pacific (https://hopit.ai).
+> Hopit is a continual-learning lab (https://hopit.ai).
 > Before its continual-learning work it published two open benchmark suites for
 > fashion vision, which remain its public standard. MODA measures
 > retrieval — finding the right product from a photo or a phrase. MODA_NER
